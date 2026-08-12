@@ -14,7 +14,7 @@ const [userCv, setUserCv] = useState('')
     const [email, setEmail] = useState('')
     const [coverLetter, setCoverLetter] = useState('')
     const [submitted, setSubmitted] = useState(false)
-    const [userRole, setuserRole] = useState('')
+    const [userRole, setuserRole] = useState<null | string>(null)
 
 
 async function getUserCv(){
