@@ -8,5 +8,5 @@ export  function middleware(request:any){
     return NextResponse.next()
 }
 export const config = {
-    matcher: ['/dashboard/:path*', '/jobs/new']
+    matcher: ['/dashboard/:path*', '/jobs/new', '/jobs/:path*/apply', '/jobs/:path*/edit']
 }
