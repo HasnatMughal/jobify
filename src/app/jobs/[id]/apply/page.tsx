@@ -40,7 +40,7 @@ const router = useRouter()
 console.log(userCv)
 console.log(userRole)
 
-if(userRole === "company") redirect('/')
+if(userRole === "company" || userRole === "") redirect('/login')
 
    
     
