@@ -43,7 +43,7 @@ function JobCard({jobTitle, location, companyName, jobDescription, salary, id, u
             </div>
         </div> : ""}
         </CardContent>
-        {userRole === "jobSeeker" && <button className='bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 ' onClick={() => router.push(`/jobs/${id}/apply`)}>Apply now</button> }
+        {userRole !== "company" && <button className='bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 ' onClick={() => router.push(`/jobs/${id}/apply`)}>Apply now</button> }
         
     </Card>
   )
