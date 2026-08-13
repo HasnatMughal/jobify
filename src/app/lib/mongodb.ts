@@ -15,7 +15,10 @@ if(!cached){
 async function connectDb() {
     if(cached.conn) return cached.conn
 
-    cached.promise = mongoose.connect(mongoDbURI)
+    cached.promise = mongoose.connect(mongoDbURI, {
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
+})
     cached.conn = await cached.promise
 
     return cached.conn
