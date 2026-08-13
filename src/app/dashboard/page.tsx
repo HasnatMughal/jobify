@@ -17,13 +17,13 @@ export default async function Dashboard(){
     const userBio : any = userSab?.bio
     const userId: any = userSab?.id
     const userRole :any = userSab?.role
+    
+    // console.log(userCv)
+    
+    await connectDb()
+    
     const dbUser = await user.findById(userId).lean()
     const userCv:any = dbUser?.cvUrl
-
-    // console.log(userCv)
-
-    await connectDb()
-
 
     
   
