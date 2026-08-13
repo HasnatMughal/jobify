@@ -1,6 +1,6 @@
 "use client"
 
-import { redirect, useParams } from "next/navigation"
+import { redirect, useParams, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import Container from "@/components/Container"
 import Application from "@/components/Application"
@@ -30,6 +30,7 @@ export default function Applications(){
     const {id} = useParams()
     const [job,setJob] = useState<any>({})
     const [applications, setApplications] = useState([])
+    const router = useRouter()
 
     const handleApplicaion = async (id:any, status:any) => {
         try {
@@ -37,6 +38,9 @@ export default function Applications(){
                 {
                 method:"PATCH",
             body:JSON.stringify({status})})
+            if(applicationRes.ok){
+                router.refresh()
+            }
         } catch (error) {
             
         }

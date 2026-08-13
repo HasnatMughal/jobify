@@ -102,7 +102,7 @@ export default async function Dashboard(){
                 <AppliedJobs id={String(job._id)} title={job.title} salary={job.salary} company={job.company} status={status} />
             </li>
         )
-    }) : []}
+    }) : "Right now, you have not applied to any job"}
 </div>
 </div> : ""
 }
