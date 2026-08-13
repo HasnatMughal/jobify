@@ -39,7 +39,7 @@ export default function Applications(){
                 method:"PATCH",
             body:JSON.stringify({status})})
             if(applicationRes.ok){
-                router.refresh()
+                window.location.reload()
             }
         } catch (error) {
             
